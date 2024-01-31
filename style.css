@@ -136,6 +136,7 @@ footer {
 .kategori_liste {
   display: flex;
   flex-flow: column wrap;
+  margin-bottom: 10px;
 }
 .Apparel,
 .Accesories,
@@ -380,8 +381,8 @@ button {
     display: grid;
     grid-template-columns: repeat(3, minmax(150px, 1fr));
     grid-template-rows: repeat(2, minmax(150px, 1fr));
-    gap: 20px;
-    margin-bottom: 100px;
+    gap: 10px;
+    margin-bottom: 70px;
     width: 100%;
     height: auto;
     flex-wrap: wrap;
