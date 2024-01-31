@@ -1,0 +1,8 @@
+.DS_Store
+video/
+*.mp4
+*.psd
+*.mov
+*.webm
+*.mp3
+*.wav

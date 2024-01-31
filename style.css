@@ -1,0 +1,365 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img,
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@font-face {
+  font-family: "TmonMonsori";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.logo {
+  font-family: "TmonMonsori";
+}
+footer {
+  width: 100%;
+  height: auto;
+  background-color: black;
+  color: aliceblue;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.get_help,
+.guide {
+  justify-content: left;
+  padding: 20px;
+  line-height: 30px;
+}
+
+.inc {
+  display: flex;
+  text-align: left;
+}
+.footer_sub {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 10px;
+  padding: 20px 20px;
+}
+.sub {
+  border: 1px solid white;
+  background-color: white;
+  color: #000309;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  padding: 8px 10px 10px 10px;
+  border-radius: 15px;
+}
+.produktliste {
+  padding: 20px;
+}
+.normal_product,
+.sale_product,
+.sold_out,
+.sold_out_sale {
+  padding-bottom: 20px;
+}
+h1,
+.under_kategori {
+  padding-left: 20px;
+}
+#kategori,
+#produktliste_,
+#produkt_details {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-container {
+  display: grid;
+  position: relative;
+  flex-wrap: wrap;
+}
+.title {
+  position: absolute;
+  top: 45%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  font-family: "TmonMonsori";
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.shop_nu a {
+  text-decoration: none;
+  color: white;
+}
+.shop_nu a:hover {
+  text-decoration: none;
+  color: rgb(245, 214, 18);
+}
+.shop_nu {
+  font-size: 20px;
+  border: 1px solid #161618;
+  background-color: #161618;
+  width: 160px;
+  padding: 20px;
+  position: absolute;
+  top: 55%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  font-family: "TmonMonsori";
+}
+.breadcrumbs {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+.breadcrumbs li::after {
+  content: " > ";
+  font-size: 0.5rem;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 10px;
+}
+.breadcrumbs li:last-child::after {
+  background: none;
+  content: "";
+}
+.breadcrumbs a {
+  text-decoration: none;
+}
+header {
+  width: 100%;
+  height: 10%;
+  background-color: black;
+  color: aliceblue;
+  font-size: 15px;
+}
+
+.navbar a {
+  color: white;
+  font-size: 3.5vw;
+  justify-content: space-between;
+  text-decoration: none;
+  display: flex;
+  padding-bottom: 20px;
+}
+.navbar a:hover {
+  color: rgb(241, 198, 8);
+}
+.navbar.show {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  font-family: GmarketSansMedium;
+}
+.navbar {
+  display: none;
+}
+.burger {
+  display: block;
+  color: var(--primary-color);
+  font-size: 20px;
+  padding-left: 20px;
+}
+button {
+  border: 1px solid black;
+  padding: 10px;
+  width: 180px;
+  background-color: #000309;
+  color: aliceblue;
+  margin: 30px 0;
+}
+.explore {
+  text-align: center;
+  padding-top: 20px;
+}
+
+@media screen and (min-width: 700px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 50px 0 50px;
+  }
+  .navbar a {
+    font-size: 1vw;
+  }
+  .burger {
+    display: none;
+  }
+  footer {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: aliceblue;
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .get_help,
+  .guide,
+  .footer_sub {
+    margin: 0 auto;
+    padding: 20px 0;
+    line-height: 30px;
+  }
+  .subscribe {
+    display: flex;
+  }
+
+  .sub {
+    border: 1px solid white;
+    background-color: white;
+    color: #000309;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    padding: 5px 10px 10px 10px;
+    border-radius: 15px;
+    margin-left: 10px;
+  }
+  h1 {
+    text-align: center;
+    padding: 40px 0 10px 40px;
+  }
+  .fullshot {
+    margin: 0;
+    width: 100%;
+    height: 100¤;
+    display: flex;
+    object-fit: cover;
+  }
+  .kategori_liste {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    grid-template-rows: repeat(2, minmax(150px, 1fr));
+    gap: 20px;
+    margin-bottom: 100px;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+  }
+  .Apparel,
+  .Accesories,
+  .Footwear,
+  .free_items,
+  .personal_care,
+  .sporting_goods {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+  }
+
+  .Apparel h3,
+  .Accesories h3,
+  .Footwear h3,
+  .free_items h3,
+  .personal_care h3,
+  .sporting_goods h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+  }
+
+  .produktliste {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: 2rem;
+    padding-bottom: 150px;
+  }
+  .produktliste article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px;
+  }
+  .under_kategori {
+    padding: 20px;
+    border-bottom: 1px solid black;
+  }
+  .under_kategori a {
+    text-decoration: none;
+    color: #000309;
+    padding-right: 20px;
+  }
+  .produkter {
+    display: flex;
+    flex-direction: column;
+  }
+  .subtitle {
+    color: gray;
+  }
+  .discounted p:last-child {
+    background: red;
+    padding: 0.2rem;
+  }
+  .discounted {
+    display: flex;
+    justify-content: space-between;
+  }
+  .prev {
+    text-decoration: line-through;
+  }
+  .now {
+    color: red;
+  }
+  .read_more {
+    text-decoration: underline;
+  }
+  .sold_out_sale img,
+  .sold_out img {
+    opacity: 50%;
+  }
+  .sold_out::before,
+  .sold_out_sale::before {
+    content: "Sold Out";
+    position: absolute;
+    background: rgb(11, 0, 0);
+    color: rgb(240, 235, 235);
+    padding: 1rem;
+  }
+
+  .produkt {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    padding-bottom: 180px;
+  }
+  .information {
+    padding-top: 20px;
+  }
+  .information dt,
+  label {
+    font-weight: bold;
+  }
+
+  h4 {
+    color: gray;
+  }
+  .select {
+    display: flex;
+    height: 2.5rem;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  .produkt_information {
+    padding-left: 20%;
+  }
+}
