@@ -1,10 +1,10 @@
 //Produktliste//
 window.addEventListener("DOMContentLoaded", init);
-//fetche
+//fetche datalink
 const ProduktelisteURL = "https://kea-alt-del.dk/t7/api/products?limit=50&start=10";
 let produktelisteTemplate;
 let produktlisteContainer;
-//fetche & template
+//template
 function init() {
   console.log("init");
 
@@ -25,7 +25,7 @@ function init() {
 
 function showProduktListe(productlisteJSON) {
   let produktListeClone;
-
+  //loop
   productlisteJSON.forEach((produktlist) => {
     console.log("produktlist", produktlist);
     produktListeClone = produktelisteTemplate.cloneNode(true).content;
