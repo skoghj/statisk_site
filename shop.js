@@ -29,35 +29,43 @@ function showProduktListe(productlisteJSON) {
   productlisteJSON.forEach((produktlist) => {
     console.log("produktlist", produktlist);
     produktListeClone = produktelisteTemplate.cloneNode(true).content;
+    //Set image source and alt attributes
     produktListeClone.querySelector(".produktliste_image").src = "https://kea-alt-del.dk/t7/images/jpg/640/1552.jpg "; //jeg kunne ikke finde forskellige billede data
     produktListeClone.querySelector(".produktliste_image").alt = `Picture of a ${produktlist.productdisplayname}`;
+    //Set product name and article type
     produktListeClone.querySelector(".produkt_name").textContent = produktlist.productdisplayname;
     produktListeClone.querySelector(".articletype").textContent = produktlist.articletype;
+    //Set regular price and discount percentage
     produktListeClone.querySelector(".price").textContent = produktlist.price;
     produktListeClone.querySelector(".discounted").textContent = `-${produktlist.discount}%`;
 
-    //Check if discount is not null before displaying it
     if (produktlist.discount !== null) {
-      produktListeClone.querySelector(".discounted").textContent = `-${produktlist.discount}%`;
+      // Calculate and display current price
+      let nowPrice = produktlist.price * (1 - produktlist.discount / 100);
+
+      // Get reference to the discounted now price element
+      let discountedPriceElement = produktListeClone.querySelector(".now");
+
+      // Update discounted now price
+      if (discountedPriceElement) {
+        discountedPriceElement.textContent = `${nowPrice.toFixed(2)} kr`;
+      }
+      // Get reference to the original price element
+      let originalPriceElement = produktListeClone.querySelector(".price");
+
+      // Update original price, strikethrough style
+      if (originalPriceElement) {
+        originalPriceElement.innerHTML = `<del>${produktlist.price} kr</del>`;
+      }
     } else {
-      // Handle the case when discount is null, e.g., set a default value or hide the element
+      // Handle the case when discount is null, e.g., set a hide the null element
       produktListeClone.querySelector(".discounted").textContent = "";
       produktListeClone.querySelector(".discounted").style.backgroundColor = "transparent";
+
+      if (produktlist.soldout) {
+        produktListeClone.querySelector("article").classList.add("sold_out");
+      }
     }
-
-    if (produktlist.sale) {
-      let salePrice = produktlist.price - produktlist.price * (produktlist.discount / 100);
-      // Set now price
-      produktListeClone.querySelector(".discounted .now").textContent = `${salePrice.toFixed(2)} kr`;
-
-      // Set prev price
-      produktListeClone.querySelector(".discounted .prev").textContent = produktlist.price;
-    }
-
-    if (produktlist.soldout) {
-      produktListeClone.querySelector("article").classList.add("sold_out");
-    }
-
     produktlisteContainer.appendChild(produktListeClone);
   });
 }
