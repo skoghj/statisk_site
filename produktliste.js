@@ -39,32 +39,23 @@ function showProduktListe(productlisteJSON) {
     produktListeClone.querySelector(".price").textContent = produktlist.price;
     produktListeClone.querySelector(".discounted").textContent = `-${produktlist.discount}%`;
 
+    if (produktlist.soldout) {
+      produktListeClone.querySelector("article").classList.add("sold_out");
+    }
+
     if (produktlist.discount !== null) {
       // Calculate and display current price
       let nowPrice = produktlist.price * (1 - produktlist.discount / 100);
 
-      // Get reference to the discounted now price element
-      let discountedPriceElement = produktListeClone.querySelector(".now");
-
       // Update discounted now price
-      if (discountedPriceElement) {
-        discountedPriceElement.textContent = `${nowPrice.toFixed(2)} kr`;
-      }
-      // Get reference to the original price element
-      let originalPriceElement = produktListeClone.querySelector(".price");
+      produktListeClone.querySelector(".now").textContent = `${nowPrice.toFixed(2)} kr`;
 
       // Update original price, strikethrough style
-      if (originalPriceElement) {
-        originalPriceElement.innerHTML = `<del>${produktlist.price} kr</del>`;
-      }
+      produktListeClone.querySelector(".price").innerHTML = `<del>${produktlist.price} kr</del>`;
     } else {
       // Handle the case when discount is null, e.g., set a hide the null element
       produktListeClone.querySelector(".discounted").textContent = "";
       produktListeClone.querySelector(".discounted").style.backgroundColor = "transparent";
-
-      if (produktlist.soldout) {
-        produktListeClone.querySelector("article").classList.add("sold_out");
-      }
     }
     produktlisteContainer.appendChild(produktListeClone);
   });
