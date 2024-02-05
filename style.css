@@ -237,11 +237,12 @@ h1,
   text-align: center;
   padding: 5px;
   width: 62px;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 .now {
   display: flex;
   color: red;
+  padding: 5px 5px 5px 0;
 }
 .produkt_now {
   font-weight: bold;
@@ -292,10 +293,12 @@ h1,
 .produkt_information {
   padding-top: 20px;
 }
+
 .produkt_soldout {
   color: red;
   font-weight: bold;
 }
+
 .produkt_discounted {
   display: flex;
 }
@@ -309,6 +312,11 @@ h1,
 .information dt,
 label {
   font-weight: bold;
+}
+.options {
+  border: 1px solid rgb(152, 150, 150);
+  padding: 4px;
+  border-radius: 4px;
 }
 .information {
   padding-top: 10px;

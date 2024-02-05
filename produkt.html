@@ -37,34 +37,34 @@
         </ol>
         <section class="produkt">
             <img src="img/1533.webp" alt="produkt">
-            <div class="produkt_information">
+            <article class="produkt_information">
                 <div class="produkt_soldout">Sold Out</div>
-                <h2>Cat Red T-shirt</h2>
-                <h4>T-shirt / Puma</h4>
+                <h2 class="name">Cat Red T-shirt</h2>
+                <h4><span class="brand">Puma</span> | <span class="articletype">T-shirt</span></h4>
                 <div class="produkt_price">
                     <div class="produkt_prev">899 kr</div>
-                    <div class="produkt_discounted">
-                        <p class="produkt_now">512.43 kr</p>
-                        <p class="discount_percent">-43%</p>
-                    </div>
                 </div>
-
-
+                <div class="produkt_discounted">
+                    <p class="produkt_now"></p>
+                    <p class="discount_percent"></p>
+                </div>
                 <dl class="information">
                     <dt>
-                        Color
+                        Season
                     </dt>
-                    <dd>Red</dd>
+                    <dd class="season">Summer</dd>
+                    <dt>Basecolour</dt>
+                    <dd class="color"></dd>
                     <dt>
                         Productions year
                     </dt>
-                    <dd>2010</dd>
+                    <dd class="year">2010</dd>
                     <dt>Inventory number</dt>
-                    <dd>1533</dd>
+                    <dd class="idnummer">1533</dd>
                 </dl>
                 <form>
                     <label>Choose your size
-                        <select name="size">
+                        <select class="options" name="size">
                             <option>XS</option>
                             <option>S</option>
                             <option>M</option>
@@ -74,7 +74,7 @@
                     </label>
                 </form>
                 <button>Add to Bag</button>
-            </div>
+            </article>
         </section>
     </main>
     <footer>
