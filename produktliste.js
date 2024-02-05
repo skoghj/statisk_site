@@ -28,24 +28,27 @@ function showProduktListe(productlisteJSON) {
   //loop
   productlisteJSON.forEach((produktlist) => {
     console.log("produktlist", produktlist);
+
     produktListeClone = produktelisteTemplate.cloneNode(true).content;
+    console.log("produktListeClone", produktListeClone);
+
     //Set image source and alt attributes
-    produktListeClone.querySelector(".produktliste_image").src = "https://kea-alt-del.dk/t7/images/jpg/640/1552.jpg "; //jeg kunne ikke finde forskellige billede data
+    produktListeClone.querySelector(".produktliste_image").src = `https://kea-alt-del.dk/t7/images/webp/640/${produktlist.id}.webp`; //jeg kunne ikke finde forskellige billede data
     produktListeClone.querySelector(".produktliste_image").alt = `Picture of a ${produktlist.productdisplayname}`;
     //Set product name and article type
     produktListeClone.querySelector(".produkt_name").textContent = produktlist.productdisplayname;
     produktListeClone.querySelector(".articletype").textContent = produktlist.articletype;
     //Set regular price and discount percentage
+    produktListeClone.querySelector(".percent").textContent = `-${produktlist.discount}%`;
     produktListeClone.querySelector(".price").textContent = produktlist.price;
-    produktListeClone.querySelector(".discounted").textContent = `-${produktlist.discount}%`;
     if (produktlist.soldout) {
       produktListeClone.querySelector("article").classList.add("sold_out");
     }
-
     if (produktlist.discount !== null) {
       // Calculate and display current price
       let nowPrice = produktlist.price * (1 - produktlist.discount / 100);
       // Update discounted now price
+      //console.log("produktListeClone", produktListeClone);
       produktListeClone.querySelector(".now").textContent = `${nowPrice.toFixed(2)} kr`;
       // Update original price, strikethrough style
       produktListeClone.querySelector(".price").innerHTML = `<del>${produktlist.price} kr</del>`;
@@ -54,6 +57,7 @@ function showProduktListe(productlisteJSON) {
       produktListeClone.querySelector(".discounted").textContent = "";
       produktListeClone.querySelector(".discounted").style.backgroundColor = "transparent";
     }
+
     produktlisteContainer.appendChild(produktListeClone);
   });
 }

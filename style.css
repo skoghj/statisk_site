@@ -222,22 +222,26 @@ h1,
 .produkt_prev {
   text-decoration: line-through;
 }
-.now,
+
 .produkt_now {
   color: red;
 }
 .discounted {
   display: flex;
+  padding: 0.2rem;
+  width: 1100%;
+}
+.discounted .percent {
   color: rgb(246, 241, 241);
   background: red;
-  padding: 0.2rem;
-  width: 60px;
   text-align: center;
+  padding: 5px;
+  width: 62px;
+  margin-left: 10px;
 }
-
 .now {
-  margin-right: 10px;
   display: flex;
+  color: red;
 }
 .produkt_now {
   font-weight: bold;
@@ -453,7 +457,7 @@ button {
 
   .discounted {
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
   }
 
   .produkt_prev,
