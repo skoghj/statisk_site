@@ -38,7 +38,6 @@ function showProduktListe(productlisteJSON) {
     //Set regular price and discount percentage
     produktListeClone.querySelector(".price").textContent = produktlist.price;
     produktListeClone.querySelector(".discounted").textContent = `-${produktlist.discount}%`;
-
     if (produktlist.soldout) {
       produktListeClone.querySelector("article").classList.add("sold_out");
     }
@@ -46,10 +45,8 @@ function showProduktListe(productlisteJSON) {
     if (produktlist.discount !== null) {
       // Calculate and display current price
       let nowPrice = produktlist.price * (1 - produktlist.discount / 100);
-
       // Update discounted now price
       produktListeClone.querySelector(".now").textContent = `${nowPrice.toFixed(2)} kr`;
-
       // Update original price, strikethrough style
       produktListeClone.querySelector(".price").innerHTML = `<del>${produktlist.price} kr</del>`;
     } else {
