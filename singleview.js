@@ -25,15 +25,18 @@ function visProdukt(produkt) {
   document.querySelector(".produkt_price").textContent = `${produkt.price} kr`;
   document.querySelector(".produkt_discounted .discount_percent").textContent = `-${produkt.discount}%`;
 
+  const soldoutElement = document.querySelector(".produkt_information .produkt_soldout");
   if (produkt.soldout) {
-    document.querySelector("article").classList.add(".produkt_soldout");
+    soldoutElement.style.display = "block";
+  } else {
+    soldoutElement.style.display = "none";
   }
 
   if (produkt.discount !== null) {
     // Calculate and display current price
     let nowPrice = produkt.price * (1 - produkt.discount / 100);
     // Update discounted now price
-    document.querySelector(".produkt_now").textContent = `${nowPrice} kr`;
+    document.querySelector(".produkt_now").textContent = `${nowPrice.toFixed(2)} kr`;
     // Update original price, strikethrough style
     document.querySelector(".produkt_price").innerHTML = `<del>${produkt.price} kr</del>`;
   } else {
