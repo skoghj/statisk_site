@@ -137,6 +137,7 @@ footer {
   display: flex;
   flex-flow: column wrap;
   margin-bottom: 10px;
+  position: relative;
 }
 .Apparel,
 .Accesories,
@@ -150,7 +151,7 @@ footer {
   justify-content: center;
   margin: 10px;
 }
-.Apparel h3,
+/*.Apparel h3,
 .Accesories h3,
 .Footwear h3,
 .free_items h3,
@@ -162,8 +163,17 @@ footer {
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
-}
+}*/
 
+.kategori_liste h3 {
+  transform: translate(0%, -545%);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+.kategori_liste a {
+  text-decoration: none;
+}
 h1,
 .under_kategori {
   padding-left: 20px;
