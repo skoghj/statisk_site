@@ -16,3 +16,9 @@ function visCategories(cats) {
     document.querySelector(".kategori_liste").appendChild(clone);
   });
 }
+
+//burgermenu//
+document.getElementById("burgerIcon").addEventListener("click", function () {
+  var navbar = document.getElementById("myNavbar");
+  navbar.classList.toggle("show");
+});

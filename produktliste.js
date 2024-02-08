@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", init);
 //fetche datalink
 let produktelisteTemplate;
 let produktlisteContainer;
+
 //template
 function init() {
   console.log("init");
@@ -31,7 +32,6 @@ function showProduktListe(productlisteJSON) {
   //loop
   productlisteJSON.forEach((produktlist) => {
     console.log("produktlist", produktlist);
-
     produktListeClone = produktelisteTemplate.cloneNode(true).content;
     console.log("produktListeClone", produktListeClone);
     produktListeClone.querySelector("a").href = `produkt.html?id=${produktlist.id}`;
@@ -45,6 +45,7 @@ function showProduktListe(productlisteJSON) {
     //Set regular price and discount percentage
     produktListeClone.querySelector(".percent").textContent = `-${produktlist.discount}%`;
     produktListeClone.querySelector(".price").textContent = produktlist.price;
+
     if (produktlist.soldout) {
       produktListeClone.querySelector("article").classList.add("sold_out");
     }
@@ -71,3 +72,20 @@ document.getElementById("burgerIcon").addEventListener("click", function () {
   var navbar = document.getElementById("myNavbar");
   navbar.classList.toggle("show");
 });
+
+/*{
+id: 1163,
+gender: "Men",
+category: "Apparel",
+subcategory: "Topwear",
+articletype: "Tshirts",
+season: "Summer",
+productionyear: 2011,
+usagetype: "Sports",
+productdisplayname: "Sahara Team India Fanwear Round Neck Jersey",
+price: 895,
+discount: null,
+brandname: "Nike",
+soldout: 0
+},
+*/
