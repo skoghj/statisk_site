@@ -1,7 +1,10 @@
+const urlParams = new URLSearchParams(window.location.search);
+const category = urlParams.get("category");
+const ProduktelisteURL = `https://kea-alt-del.dk/t7/api/products?category=${category}`;
+
 //Produktliste//
 window.addEventListener("DOMContentLoaded", init);
 //fetche datalink
-const ProduktelisteURL = "https://kea-alt-del.dk/t7/api/products?limit=50&start=10";
 let produktelisteTemplate;
 let produktlisteContainer;
 //template
@@ -32,6 +35,7 @@ function showProduktListe(productlisteJSON) {
     produktListeClone = produktelisteTemplate.cloneNode(true).content;
     console.log("produktListeClone", produktListeClone);
     produktListeClone.querySelector("a").href = `produkt.html?id=${produktlist.id}`;
+    produktListeClone.querySelector(".read-more").href = `produkt.html?id=${produktlist.id}`;
     //Set image source and alt attributes
     produktListeClone.querySelector(".produktliste_image").src = `https://kea-alt-del.dk/t7/images/webp/640/${produktlist.id}.webp`; //jeg kunne ikke finde forskellige billede data
     produktListeClone.querySelector(".produktliste_image").alt = `Picture of a ${produktlist.productdisplayname}`;

@@ -411,12 +411,7 @@ button {
     height: auto;
     flex-wrap: wrap;
   }
-  .Apparel,
-  .Accesories,
-  .Footwear,
-  .free_items,
-  .personal_care,
-  .sporting_goods {
+  .categorynavn img {
     position: relative;
     display: flex;
     align-items: center;
@@ -424,12 +419,7 @@ button {
     margin: 10px;
   }
 
-  .Apparel h3,
-  .Accesories h3,
-  .Footwear h3,
-  .free_items h3,
-  .personal_care h3,
-  .sporting_goods h3 {
+  .categorynavn h3 {
     position: absolute;
     top: 50%;
     left: 50%;

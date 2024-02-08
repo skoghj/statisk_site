@@ -9,7 +9,6 @@ function getProduct() {
 }
 
 const temp = document.querySelector("section").content;
-const parent = document.querySelector(".produkt_information");
 
 function visProdukt(produkt) {
   console.log(produkt); // 수정: 변수 이름을 수정
